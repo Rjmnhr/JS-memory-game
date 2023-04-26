@@ -37,15 +37,15 @@ startBtn.addEventListener("click", function () {
   for (let i = 0; i < blocks.length; i++) {
     blocks[i].style.backgroundImage = `url(${shuffledImages[i]})`;
   }
-  // let timer = 5;
+  let timer = 5;
 
-  // var looper = setInterval(() => {
-  //   timer--;
-  //   countDown.innerHTML = timer;
-  //   if (timer <= 0) {
-  //     clearInterval(looper);
-  //   }
-  // }, 1000);
+  var looper = setInterval(() => {
+    timer--;
+    countDown.innerHTML = timer;
+    if (timer <= 0) {
+      clearInterval(looper);
+    }
+  }, 1000);
 
   setTimeout(() => {
     for (let i = 0; i < blocks.length; i++) {
@@ -57,7 +57,7 @@ startBtn.addEventListener("click", function () {
     blocks[i].addEventListener("click", function () {
       moves++;
       totalMoves.innerHTML = `Total moves: ${moves}`;
-      if (moves >= 15) {
+      if (moves >= 20) {
         alert("You are out of moves");
         moves = 0;
         totalMoves.innerHTML = `Total moves: ${moves}`;
